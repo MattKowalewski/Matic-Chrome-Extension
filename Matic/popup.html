@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Matic</title>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap&subset=latin-ext" rel="stylesheet">
+
+    <style>
+      input[type=url],input[type=number],select,option
+      {
+        border:none;
+        border-bottom: solid 1px black;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        outline: none;
+        font-family: 'Lato', sans-serif;
+      }
+
+      input[type=url]:focus,input[type=number]:focus,select:focus,option:focus
+      {
+        background-color: rgba(0, 128, 0, 0.1);
+        border-bottom: solid 1px green;
+      }
+
+      body {
+        min-width: 420px;
+        min-height: 500px;
+        overflow-x: hidden;
+        font-family: 'Lato', sans-serif;
+        text-align: left;
+        padding:20px;
+      }
+
+      #add{
+        background-color:green;
+        color: white;
+        border: none;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        outline: none;
+        cursor: pointer;
+      }
+
+      #add:active{
+        background-color: white;
+        color:green;
+      }
+
+      #add:focus{
+        border: solid 1px green;
+      }
+
+      button{
+        background-color: #404abc;
+        color: white;
+        border:solid 1px #404abc;
+        cursor: pointer;
+        font-family: 'Lato', sans-serif;
+        border-radius: 8px;
+        padding: 8px;
+        outline: none;
+      }
+
+      button:focus{
+        text-decoration: underline;
+      }
+
+      button:active{
+        color: #404abc;
+        background-color: white;
+      }
+
+      #clear{
+        color: #404abc;
+        background-color: white;
+      }
+
+      table{
+        width:100% ;
+        border-collapse:collapse;
+        table-layout: fixed;
+      }
+
+      td{
+        padding:2%;
+        border-top: solid 1px #404abc33;
+        color: #333;
+      }
+
+      th{
+        padding:2%;
+      }
+
+      td > span{
+        text-decoration: underline;
+        color: red;
+        cursor: pointer;
+      }
+
+      p{
+        font-size: 120%;
+      }
+
+      #brand{
+         color: #404abc;
+         text-decoration: none;
+      }
+    </style>
+
+    <script src="jQuery.js"></script>
+    <script src="popup.js"></script>
+  </head>
+  <body>
+
+      <p><strong>You have <span id="nbr">0</span> websites to open</strong></p>
+    <button id="open">Open</button>
+    <button id="open-window">Open in new window</button>
+    <button id="clear">Clear storage</button>
+
+    <br><br><br><p><strong>Set tab url and time interval:</strong></p>
+	  <form>
+    <input type="url" id="url" placeholder="Paste url here">
+    <input type="number" id="number" value="1" min="1" style="width: 3em;">
+    <select name="time" id="time">
+        <option value="days">day(s)</option>
+        <option value="weeks">week(s)</option>
+        <option value="months">month(s)</option>
+        <option value="hours">hour(s)</option>
+    </select>
+    <input type="submit" id="add" value="Add">
+
+    </form>
+    
+    <br><br><br><p><strong>Your current <span id="brand">Matic</span> tabs</strong></p>
+        <table>
+            <thead>
+            <tr>
+              <th style="width: 70%">Link</th><th style="width: 20%">open every</th><th style="width: 10%"></th>
+            </tr>
+            </thead>
+          <tbody id="tabs">
+
+          </tbody>
+        </table>  
+  </body>
+</html>
+
